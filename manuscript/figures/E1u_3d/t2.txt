@@ -1,0 +1,108 @@
+Image:
+  Filename: Eu-1.pdf
+  Format: PDF (Portable Document Format)
+  Mime type: application/pdf
+  Class: DirectClass
+  Geometry: 288x187+0+0
+  Resolution: 72x72
+  Print size: 4x2.59722
+  Units: Undefined
+  Colorspace: sRGB
+  Type: TrueColorAlpha
+  Base type: Undefined
+  Endianness: Undefined
+  Depth: 16/8-bit
+  Channel depth:
+    Red: 8-bit
+    Green: 8-bit
+    Blue: 8-bit
+    Alpha: 1-bit
+  Channel statistics:
+    Pixels: 53856
+    Red:
+      min: 0  (0)
+      max: 65535 (1)
+      mean: 56027.8 (0.85493)
+      median: 65535 (1)
+      standard deviation: 19002.8 (0.289964)
+      kurtosis: 2.16239
+      skewness: -1.88504
+      entropy: 0.358536
+    Green:
+      min: 0  (0)
+      max: 65535 (1)
+      mean: 54298.3 (0.828539)
+      median: 65535 (1)
+      standard deviation: 21737.8 (0.331698)
+      kurtosis: 1.22666
+      skewness: -1.69015
+      entropy: 0.333663
+    Blue:
+      min: 0  (0)
+      max: 65535 (1)
+      mean: 54097.2 (0.82547)
+      median: 65535 (1)
+      standard deviation: 21972 (0.335271)
+      kurtosis: 1.11685
+      skewness: -1.6629
+      entropy: 0.333705
+    Alpha:
+      min: 65535  (1)
+      max: 65535 (1)
+      mean: 65535 (1)
+      median: 65535 (1)
+      standard deviation: nan (nan)
+      kurtosis: 1.6384e+52
+      skewness: 9.375e+35
+      entropy: 0
+  Image statistics:
+    Overall:
+      min: 0  (0)
+      max: 65535 (1)
+      mean: 57489.6 (0.877235)
+      median: 65535 (1)
+      standard deviation: nan (nan)
+      kurtosis: 3.45286
+      skewness: -2.22212
+      entropy: 0.256476
+  Rendering intent: Perceptual
+  Gamma: 0.454545
+  Chromaticity:
+    red primary: (0.64,0.33)
+    green primary: (0.3,0.6)
+    blue primary: (0.15,0.06)
+    white point: (0.3127,0.329)
+  Matte color: grey74
+  Background color: white
+  Border color: srgb(223,223,223)
+  Transparent color: none
+  Interlace: None
+  Intensity: Undefined
+  Compose: Over
+  Page geometry: 288x187+0+0
+  Dispose: Undefined
+  Iterations: 0
+  Compression: Undefined
+  Orientation: Undefined
+  Profiles:
+    Profile-xmp: 1182 bytes
+  Properties:
+    date:create: 2022-09-12T12:21:17+00:00
+    date:modify: 2022-09-12T12:21:17+00:00
+    date:timestamp: 2022-09-12T12:21:17+00:00
+    pdf:HiResBoundingBox: 288x186.98+0+0
+    pdf:Version: PDF-1.4
+    signature: 31ba8d4b922859682d611df73fc07f3e6966ec800f7414678a7e90970f7a538c
+    xmp:CreateDate: 2022-09-12T20:54:51+09:00
+    xmp:CreatorTool: Asymptote 2.822.82
+    xmp:ModifyDate: 2022-09-12T20:54:51+09:00
+  Artifacts:
+    verbose: true
+  Tainted: False
+  Filesize: 30090B
+  Number pixels: 53856
+  Pixel cache type: Memory
+  Pixels per second: 43.4542MP
+  User time: 0.000u
+  Elapsed time: 0:01.001
+  Version: ImageMagick 7.1.0-47 Q16-HDRI aarch64 20393 https://imagemagick.org

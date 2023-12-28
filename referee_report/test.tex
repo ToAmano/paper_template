@@ -1,0 +1,39 @@
+\documentclass[a4paper]{article}
+
+% 
+% response_macros.tex
+\newcommand{\initresponses}{\newcounter{pointcounter}}
+
+\newenvironment{reviewer}{\setcounter{pointcounter}{1}}{}
+
+\newcommand{\point}[1]{\medskip \noindent
+               \textsl{{\fontseries{b}\selectfont Q\thepointcounter}.
+                 \stepcounter{pointcounter} #1}}
+\newcommand{\reply}{\medskip \noindent \textbf{Answer}.\ }
+
+\begin{document}
+test
+
+\initresponses
+
+\begin{reviewer}
+\section*{Reviewer 1}
+
+\point{Could you fix this?}
+\reply Sure, I can.
+
+\point{And that?}
+\reply Why not?
+
+\end{reviewer}
+
+\begin{reviewer}
+\section*{Reviewer 2}
+
+\point{Excellent!}
+
+\reply Thanks.
+
+\end{reviewer}
+
+\end{document}

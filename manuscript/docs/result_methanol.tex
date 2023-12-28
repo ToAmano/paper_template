@@ -1,0 +1,76 @@
+
+\subsection{Methanol}
+\subsubsection{Model Accuracy}
+% 最初にy=xのaccuracyの計算
+We have developed independent models for methanol in the gaseous state and for methanol in the liquid state. Figure 1 shows the accuracy of our model for gas phase and liquid phase methanol. In case of methanol, we have four models, namely CH bond, CO bond, OH bond, and O lonepair models. Figure 1 shows the final predicted results of isolated and liquid methanol for all models. In the case of isolated methanol, models only need to learn the displacement of the Wannier centres due to molecular deformation, and all bonds can be converged to an accuracy of $\mathrm{RSME}=\si{0.03}{D}$. For liquid methanol, the accuracy drops to $\mathrm{RSME}=\si{0.03}{D}$ due to learning complex intermolecular interactions, but this is still a high standard. Comparing each model, the RSME of the lone-pair model of O is the worst, which may be due to the easier movement of the electrons in the lone pair compared to the electrons in covalent bonds. Due to the accuracy of our bond dipole models, molecular dipole moments are also well calculated compared to DFT calculations with $\mathrm{RSME}=\si{0.03}{D}$ for liquid case and $\mathrm{RSME}=\si{0.03}{D}$ for gas case. 
+
+% それぞれのボンド双極子の大きさについての考察
+% 1: Oローンペアが一番大きい値をもつ
+% 2: 電気陰性度とは関係ないということに言及する
+% 3: 液体モデルと孤立モデルでは，全体的に値の幅が大きくなる．さらに，Oローンペアでは大きくその値が大きくなり，OHボンドではほとんど値が0に近いものも現れる．これはメタノールの強い水素結合によってワニエセンターの位置が大きく動いていることに起因する．
+Delving into each bond components, the dipole moments of O lonepairs have largest values at around $\si{2.8}{D}$ in gas case refrecting factor $2$ in equation (1).  We note that bond dipole moment is not consistent with polarizability as bond dipole is proportional to the relative vector from bond center to wannier center, not considering atomic size effects. When it comes to liquid case, the values of bond dipoles varies a lot. Especially, the values of O lone pairs become large up to $\si{4.0}{D}$, and the values of OH bond . This is because wannier centers in liquid methanol are largely affected by hydrogen bondings.
+
+
+\subsubsection{Solvent effects}
+% 液体モデルと固体モデルを使って
+Figure 2 shows the dipole moments of individual methanols in the liquid methanol system, calculated by the liquid and gas models. The predicted value from the gas model is $1.7D$, whereas the predicted value from the liquid model is significantly larger at $2.8D$, which is close to the experimental value of $2.87D$. Given that both have the same structure, it is clear that the induced polarization effects in the liquid are very large and the machine learning model learns them well.
+
+
+\begin{comment}
+ Methanol re-fitting 孤立
+% /Volumes/portableSSD2T/12_methanol/2023_03_03_1molecule/allinone/20230916_model_rotate
+1: 【pgfplotへの変換】Fitting result $y=x$
+2: 【作図】Bond Dipole match histgram with deviation histgram
+3: 
+3: 【作図】Dipole match along MD trajectory with errors
+4: 【作図】Molecule Dipole size histgram
+
+
+- fittingの経過（epoch数との関係）
+- 分子双極子のヒストグラム
+- ボンドごとの双極子のヒストグラム
+- trajectoryに沿った双極子
+- 真値(DFT)との双極子の誤差
+- 【多分コーディングが必要】ボンドとワニエの位置関係（角度分布や距離分布）
+\end{comment}
+
+% \section{Liquid Methanol}
+
+ML results.
+1: 【】M and M' dependencies
+2: 【】cutoff dependencies (4 and 6 angstrom ) →  これで，ワニエが短いcutoffで良いということを示したい．
+3: 【】descriptor length dependencies (max 24 atoms is enough)
+
+- 液体CPMDのデータを液体モデル，孤立モデルから計算，一方孤立CPMDのデータを孤立モデルから計算して構造と分極の影響の大きさをはかる
+- ワニエのRDF
+- ワニエの角度分布の違いも結構重要かもね．
+- 液体CPMDの誘電関数（実験データの追加）@IR
+- 液体メタノールの誘電定数（これはMLポテンシャルがうまく行きそうなら！）
+
+- THz帯の解析（これが難題）
+
+
+
+
+
+- PPG725が合わない問題への対処
+    - 400K，12Angstrom
+    - MとM'を増やす？
+    - cutoffか記述子の数を増やす
+    - GNN
+    - 経験電荷への分解ができないか？特に垂直成分と水平成分への分解は役に立ちそう．
+- PG系に対してどんな解析が可能か？
+    - 先行研究調査が必要
+    - 【gromacs】gromacsからVDOSを計算．
+- 経験電荷をなんとか計算する方法はないか？
+    - 先行研究調査が必要
+- GNNへの拡張
+    - 先行研究調査，特に双極子予測のreview，GNNの例としてdimenetのソースコードをみる．
+- ML potential
+- メタノールの更なる解析
+   - 誘電関数のピーク位置と強度を実験と定量的に比較できるか？
+- 結晶への拡張（3CSiC，TiO2は大変だよな流石に．）
+    - VASP+wannierの計算が必須
+- 山崎さんの他の物質の計算（まずは密度から．）
+- 只野さん案件
+- 

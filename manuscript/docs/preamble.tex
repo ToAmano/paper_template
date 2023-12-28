@@ -1,0 +1,115 @@
+% preamble
+
+% This is for template only !!
+\usepackage{lipsum}
+
+%\usepackage{floatrow}
+\usepackage{siunitx}
+\usepackage{color}
+\usepackage{hhline}
+\usepackage{mathrsfs}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{adjustbox}
+\usepackage{dcolumn}
+\usepackage{bm}% bold math
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{afterpage}
+\usepackage{amsmath}
+\usepackage{ulem}
+\usepackage{physics}
+
+% https://mathlandscape.com/latex-underline/
+\usepackage{ulem}
+
+\usepackage{here} % force figures Here.
+
+\usepackage[inline]{asymptote}
+
+\usepackage[compat=1.1.0]{tikz-feynhand} % feynman diagram
+% subcaption http://www.yamamo10.jp/yamamoto/comp/latex/make_doc/insert_fig/index.php#SUBCAP
+% https://oku.edu.mie-u.ac.jp/tex/mod/forum/discuss.php?d=1024
+% https://atatat.hatenablog.com/entry/cloud_latex18_subcaption
+\usepackage{caption}
+\usepackage[subrefformat=parens]{subcaption}
+%\usepackage{floatrow}
+%\usepackage[export]{adjustbox}
+
+% http://www.yamamo10.jp/yamamoto/comp/latex/make_doc/chemistry/index.php
+\usepackage[version=4]{mhchem}
+
+% for tikz 
+\usepackage{tikz, pgf, pgfplots, pgfplotstable}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{math,calc}
+\pgfplotsset{compat = newest}
+\usepgfplotslibrary{groupplots} % LATEX and plain TEX
+\pgfplotsset{compat = newest}
+
+\pgfplotsset{
+   table/search path={figures/self_energy, figures/tdos, figures/diel_func, figures/band},
+}
+
+\graphicspath{{figures/self_energy, figures/tdos, figures/diel_func, figures/band}}
+
+% https://tikz.dev/library-external
+% crisさんおすすめ
+% \usetikzlibrary{external}
+% \tikzexternalize % activate!
+
+\usepackage{multirow}
+
+
+\usepackage[subpreambles=true,sort=true]{standalone}
+
+%https://uec.medit.link/latex/table.html#:~:text=%E3%82%BB%E3%83%AB%E3%81%AE%E7%B5%90%E5%90%88,%E3%82%92%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%82%80%E5%BF%85%E8%A6%81%E3%81%8C%E3%81%82%E3%82%8B%E3%80%82
+
+% \usepackage[no-math,haranoaji,deluxe]{luatexja-preset}
+%https://mizunashi-mana.github.io/blog/posts/2021/12/migrate-to-luatexja/
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\arraycolsep=0.0em
+\setlength{\abovecaptionskip}{0mm}
+\setlength{\belowcaptionskip}{0mm}
+\usepackage{caption} 
+\captionsetup[table]{skip=8pt}
+\captionsetup[figure]{skip=4pt}
+%\setlength{\MidlineHeight}{2pt}
+
+
+\usepackage{comment}
+%\usepackage{natbib}
+
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+\usepackage{cleveref}
+\crefname{equation}{Eq.}{Eq.}% {環境名}{単数形}{複数形} \crefで引くときの表示
+\crefname{figure}{Fig.}{Fig.}% {環境名}{単数形}{複数形} \crefで引くときの表示
+\crefname{table}{Table}{Table}% {環境名}{単数形}{複数形} \crefで引くときの表示
+\crefname{section}{Sec.}{Sec.}% {環境名}{単数形}{複数形} \crefで引くときの表示
+\crefname{appendix}{Appendix}{Appendix}% {環境名}{単数形}{複数形} \Crefで引くときの表示
+
+
+\Crefname{equation}{Equation}{Equation}% {環境名}{単数形}{複数形} \Crefで引くときの表示
+\Crefname{figure}{Figure}{Figure}% {環境名}{単数形}{複数形} \Crefで引くときの表示
+\Crefname{table}{Table}{Table}% {環境名}{単数形}{複数形} \Crefで引くときの表示
+\Crefname{section}{Section}{Section}% {環境名}{単数形}{複数形} \Crefで引くときの表示
+\Crefname{appendix}{Appendix}{Appendix}% {環境名}{単数形}{複数形} \Crefで引くときの表示
+
+
+
+\usepackage{threeparttable} %https://qiita.com/kumamupooh/items/38795811fc6b934a950d
+% bookmark
+% \usepackage{xurl}
+% \hypersetup{unicode,bookmarksnumbered=true,hidelinks,final}
+
+
+\newcommand{\ph}{\phantom{0}}
+
+\renewcommand{\topfraction}{1.0}
+\renewcommand{\bottomfraction}{1.0}
+\renewcommand{\dbltopfraction}{1.0}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.9}
+\renewcommand{\dblfloatpagefraction}{0.9}
+

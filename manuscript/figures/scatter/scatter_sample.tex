@@ -1,0 +1,81 @@
+
+% -----------
+% 論文用
+% -----------
+
+\documentclass[tikz]{standalone}
+\usepackage{tikz, pgf, pgfplots, pgfplotstable}
+\usepackage{physics}
+\pgfplotsset{compat = newest}
+\usepackage{siunitx}
+
+\pgfplotsset{every axis/.append style={
+                     label style={font=\large},
+                     tick label style={font=\large},
+		     legend style={font=\large},
+                    }}
+\begin{document}
+%\beginpgfgraphicnamed{images/TDOS_GAMMA_ex}
+\pgfplotstableread{data/cc_pred_dipole.txt}{\cc}
+\pgfplotstableread{data/ch_pred_dipole.txt}{\ch}
+\pgfplotstableread{data/co_pred_dipole.txt}{\co}
+\pgfplotstableread{data/oh_pred_dipole.txt}{\oh}
+\pgfplotstableread{data/o_pred_dipole.txt}{\o}
+
+
+    \begin{tikzpicture}
+\definecolor{crimson2143940}{RGB}{214,39,40}
+\definecolor{darkgray176}{RGB}{176,176,176}
+\definecolor{darkorange25512714}{RGB}{255,127,14}
+\definecolor{forestgreen4416044}{RGB}{44,160,44}
+\definecolor{lightgray204}{RGB}{204,204,204}
+\definecolor{mediumpurple148103189}{RGB}{148,103,189}
+\definecolor{steelblue31119180}{RGB}{31,119,180}
+        % axis環境が2次元plot
+        \begin{axis}[ %グラフ設定
+            xmin = 0, xmax = 4,
+            ymin = 0, ymax = 4,
+            xtick distance = 1,    %軸目盛の刻み幅
+            ytick distance = 1,
+	    xlabel={\SI[parse-numbers = false]{\mathrm{ML dipole}}{(D)}},
+	    ylabel={\SI[parse-numbers = false]{\mathrm{DFT dipole}}{(D)}},
+            grid = both,
+            minor tick num = 1,
+            major grid style = {lightgray},
+            minor grid style = {lightgray!25},
+            width = 8.6cm,
+%            height = 0.75\linewidth,
+            legend cell align = {left},
+            legend pos = north west,
+	    legend columns=1,
+	    legend image post style={scale=10.0}, % https://tex.stackexchange.com/questions/272499/pgfplots-legend-style-marker-size
+         	 %   transpose legend,
+	    % legend style={at={(0.5,1.1)},anchor=north}
+        ]
+            %\coordinate (A) at (563,0); % additional peak @x-axis
+	    %\coordinate (B) at (563,0.6);
+            %\coordinate (C) at (598,0); % additional peak @z-axis
+	    %\coordinate (D) at (598,0.6);
+            \addplot[forestgreen4416044, only marks,mark size=0.2pt] table [x index=0, y index=1] {\cc};
+            \addplot[crimson2143940,only marks,mark size=0.2pt] table [x index=0, y index=1] {\oh};
+            \addplot[darkorange25512714, only marks,mark size=0.2pt] table [x index=0, y index=1] {\co};
+            \addplot[mediumpurple148103189, only marks,mark size=0.2pt] table [x index=0, y index=1] {\ch};
+            \addplot[steelblue31119180, only marks,mark size=0.2pt] table [x index=0, y index=1] {\o};
+
+
+	    %\addplot[orange, dotted, line width = 1, mark=none] coordinates {(563,0) (563,0.6)}; 
+	    %\addplot[orange, dotted, line width = 1, mark=none] coordinates {(598,0) (598,0.6)};
+            %\addplot[red, only marks] table [x ={x}, y = {y2}] {\table};
+            %\addplot[teal, only marks, mark = x, mark size = 3pt]
+            %    table [x = {x}, y = {y3}] {\table};
+            \legend{
+	        CC,
+                OH,
+	        CO,
+	        CH,
+	        O,
+	    }
+        \end{axis}
+    \end{tikzpicture}
+% \endpgfgraphicnamed
+\end{document}

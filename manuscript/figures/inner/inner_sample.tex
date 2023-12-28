@@ -1,0 +1,92 @@
+%----------------
+% 論文用
+%----------------
+
+\documentclass[tikz]{standalone}
+\usepackage{tikz, pgf, pgfplots, pgfplotstable}
+\usepackage{physics}
+\pgfplotsset{compat = newest}
+\usepackage{tikz-3dplot}
+
+%\usepackage[style=phys,backend=bibtex]{biblatex}
+\usetikzlibrary{math,calc}
+\usepgfplotslibrary{groupplots} % LATEX and plain TEX
+\usepackage[numbers]{natbib}
+\usepackage{siunitx}
+%\setcitestyle{numbers,open={((},close={))}} %Citation-related commands
+
+% axis style, ticks, etc
+\pgfplotsset{every axis/.append style={
+                    label style={font=\large},
+                    tick label style={font=\large},
+		    legend style={font=\large},
+                   }}
+\begin{document}
+    %\pgfplotstableread{20220629_omega.txt}{\omega}
+    %\pgfplotstableread{TiO2_224.Self.mode7}{\eu}
+%    \pgfplotstableread{calculations/scph_imag.txt}{\imag} これが元々v.0.9.0まで使っていたやつ
+%     \pgfplotstableread{calculations/20221005_scph_imag_paste.txt}{\imag} これが元々v.0.11.0まで使っていたやつ．4phの振動数依存性なし
+ \pgfplotstableread{calculations/20221019_imag_4ph.txt}{\imag} 
+ \pgfplotstableread{calculations/harm_eps_imag.txt}{\imagharm}
+    \pgfplotstableread[col sep=comma]{experiment/eps_xx_imag.csv}{\exp}
+    \newcommand\SIZE{8.6cm} %これでcm単位で指定することができるかな．．．
+    \begin{tikzpicture}
+     %\tikzstyle{every node}=[font=\Large]
+        % axis環境が2次元plot
+        \begin{axis}[ %グラフ設定
+            xmin = 0, xmax = 600,
+            ymin = -50, ymax = 1100,
+            xtick distance = 100,    %軸目盛の刻み幅
+            ytick distance = 200,
+	    xlabel={\SI[parse-numbers = false]{\mathrm{Frequency}}{(\cm^{-1})}},
+	    ylabel=$\Im\epsilon_{xx}$,
+            % grid = both,
+            minor tick num = 1,
+            major grid style = {lightgray},
+            minor grid style = {lightgray!25},
+            width = 8.6cm, %\linewidth,
+%            height = 0.75\linewidth,
+            legend cell align = {left},
+            legend pos = north east
+        ]
+            %\coordinate (A) at (563,0); % additional peak @x-axis
+	    %\coordinate (B) at (563,180);
+            %\coordinate (C) at (598,0); % additional peak @z-axis
+	    %\coordinate (D) at (598,180);
+            \addplot[blue,solid, line width =  2, mark = none] table [x index=0, y expr=(-\thisrowno{1}-\thisrowno{5})/2] {\imag};
+            \addplot[cyan,dashed, line width = 2, mark = none] table [x index=0, y expr=(-\thisrowno{1}-\thisrowno{5})/2] {\imagharm};
+            \addplot[orange,only marks, line width = 2, mark = *,mark options={scale=0.5}] table [x index=0, y index=1] {\exp};
+	    \addplot [black, mark=none] coordinates {(0, 0) (600, 0)};
+            %\addplot[red ,solid, line width = 2, mark = none] table [x index=2, y index=4] {\imag};
+	    %\addplot[red, dotted, line width = 2, mark=none] coordinates {(563,0) (563,180)}; 
+	    %\addplot[blue,dotted, line width = 2, mark=none] coordinates {(598,0) (598,180)};
+            %\addplot[red, only marks] table [x ={x}, y = {y2}] {\table};
+            %\addplot[teal, only marks, mark = x, mark size = 3pt]
+            %    table [x = {x}, y = {y3}] {\table};
+	    \node[] at (200,1000) {$E^{\mathrm{1}}_{\mathrm{u}}$};
+	    \node[] at (400,150) {$E^{\mathrm{2}}_{\mathrm{u}}$};
+            \node[] at (500,150) {$E^{\mathrm{3}}_{\mathrm{u}}$};
+            \legend{SCPH+B, non-SC, Exp.~\cite{kanehara2015Terahertz}}
+	    %
+            %    Plot only with marks,
+            %    Plot with other type of marks}
+        \end{axis}
+%          \begin{scope}[xshift=0.4\linewidth,yshift=0.13\linewidth] %https://stackoverflow.com/questions/54463610/latex-pgfplots-scope-inset-plot-in-groupplot
+          \begin{scope}[xshift=3.5cm, yshift=2.0cm]
+           \begin{axis}[
+              xmin = 300, xmax = 600,
+              ymin = -10, ymax = 150,
+              %xtick distance = 100,    %軸目盛の刻み幅
+              %ytick distance = 50,
+              width = 4.3cm, %0.5\linewidth,
+              height = 3.44cm, %0.4\linewidth,
+              ]
+             \addplot[orange,only marks, line width = 1, mark = *,mark options={scale=0.5}] table [x index=0, y index=1] {\exp};
+             \addplot[blue,solid, line width =  1, mark = none] table [x index=0, y expr=(-\thisrowno{1}-\thisrowno{5})/2] {\imag};
+             \addplot[cyan,dashed, line width = 1, mark = none] table [x index=0, y expr=(-\thisrowno{1}-\thisrowno{5})/2] {\imagharm};
+             \addplot[black, mark=none] coordinates {(300, 0) (600, 0)};
+           \end{axis}
+          \end{scope}
+    \end{tikzpicture}
+\input{../../ver_0_after.bbl}
+\end{document}    

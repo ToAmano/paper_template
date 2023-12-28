@@ -1,0 +1,21 @@
+Image:
+  Filename: ../band/JPS_R2SCAN_scph_standalone.pdf
+  Format: PDF (Portable Document Format)
+  Mime type: application/pdf
+  Class: DirectClass
+  Geometry: 380x224+0+0
+  Resolution: 72x72
+  Print size: 5.27778x3.11111
+  Units: Undefined
+  Colorspace: sRGB
+  Type: TrueColorAlpha
+  Base type: Undefined
+  Endianness: Undefined
+  Depth: 16/8-bit
+  Channel depth:
+    Red: 8-bit
+    Green: 8-bit
+    Blue: 8-bit
+    Alpha: 8-bit
+  Channel statistics:
+    Pixels: 85
