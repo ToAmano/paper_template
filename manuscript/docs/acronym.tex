@@ -1,0 +1,46 @@
+
+
+
+ % https://ramibaddour.com/2017/01/18/latex-working-with-acronyms/
+ % \renewcommand{\baselinestretch}{10.0}
+ \begin{acronym}[PPG725]
+ % https://tex.stackexchange.com/questions/95640/acronyms-list-size
+ %  \setlength{\parskip}{0ex}
+  \setlength{\itemsep}{4.0pt}
+     \acro  {H-bond}[H-bond] {hydrogen bond} 
+     \acrodefplural{H-bond}[H-bonds] {hydrogen bonds} % https://tex.stackexchange.com/questions/38558/how-to-pluralize-an-acronym-which-ends-in-s-correctly
+     \acro  {DPMD}  [DPMD]   {deep potential molecular dynamics}
+     \acro  {RMSE}  [RMSE]   {root mean square error}
+     \acro  {RDF}   [RDF]    {radial distribution function}
+     \acro  {KS}    [KS]    {Kohn-Sham} % finish
+     \acro  {O-lp}  [O-lp]  {O lone-pair} % finish
+     \acro  {DFPT}  [DFPT]  {density functional perturbation theory} % finish
+     \acro  {DFT}   [DFT]   {density functional theory}
+     \acro  {ML}    [ML]    {machine learning}
+     \acro  {VACF}  [VACF]  {velocity auto-correlation function}
+     \acro  {VDOS}  [VDOS]  {vibrational density of states}
+     \acro  {PG}    [PG]    {propylene glycol}
+     \acro  {PG2}   [PG2]   {di-propylene glycol}
+     \acro  {PPG}   [PPG]   {polypropylene glycol}
+     \acro  {PPG725}[PPG725]{14-mer of Propylene glycol }
+     \acro  {WF}    [WF]    {Wannier function}
+     \acro  {MLWF}  [MLWF]  {maximally-localized Wannier function}
+     \acrodefplural{MLWF} [MLWFs]  {maximally-localized Wannier functions}
+     \acro  {WC}    [WC]    {Wannier center}
+     \acrodefplural{WC} [WCs]  {Wannier centers}
+     \acro  {BC}    [BC]    {bond center}
+     \acro  {CPMD}  [CPMD]  {Car-Parrinello molecular dynamics}
+     \acro  {BOMD}  [BOMD]  {Born-Oppenheimer molecular dynamics}
+     \acro  {CMD}   [CMD]  {classical molecular dynamics}
+     \acro  {BO}    [BO]    {Born-Oppenheimer}
+     \acro  {AIMD}  [AIMD]  {\textit{ab initio} molecular dynamics}
+     \acro  {MD}    [MD]    {molecular dynamics}
+     \acro  {lp}    [lp]    {lone-pair}   
+     \acro  {THz}   [THz]    {terahertz}
+     \acro  {IR}    [IR]     {infrared}
+
+ %% Define a custom plural form of an acronym
+ %    \acrodefplural{iot}[IoTs]{Internets-of-Things}
+ %% Preferably, put all acronym definitions in one file and load it
+ %   \input{acros.tex}
+ \end{acronym}

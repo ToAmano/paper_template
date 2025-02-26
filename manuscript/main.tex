@@ -1,15 +1,46 @@
-Time-stamp: <2023-10-03 23:38:00 amano>
+% Time-stamp: <2025-02-27 03:57:13 amano>
 
 % main file
 \documentclass[luatex,twocolumn,showpacs,aps,prb,reprint,amsfonts,amsmath,amssymb,floatfix,groupedaddress, longbibliography]{revtex4-2} 
-% プリアンブル
+% preamble 
 \input{docs/preamble.tex}
 
 % path setting
 \input{docs/path_setting.tex}
 % \long\def\beginpgfgraphicnaOBmed#1#2\endpgfgraphicnamed{\includegraphics{#1}}
 
-\input{docs/document.tex}
+
+\begin{document}
+
+\input{docs/title_and_author.tex}
+
+\input{docs/abst.tex}
+
+\maketitle
+\input{docs/acronym.tex}
+
+% % intro
+\input{docs/intro.tex}
+
+% theory
+\input{docs/theory.tex}
+
+% result
+\section{Results and Discussion}
+\input{docs/result1.tex}
+\input{docs/result2.tex}
+
+\input{docs/conclusion.tex}
+
+\input{docs/acknowledgment.tex}
+
+\input{docs/appendix.tex}
+
+% references
+\bibliographystyle{apsrev4-2}
+\bibliography{references/ref.bib}
+\end{document}
+
 
 % Local Variables:
 % mode: yatex

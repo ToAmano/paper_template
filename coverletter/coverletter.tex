@@ -1,100 +1,66 @@
-%% start of file `template.tex'.
-%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%% start of file `coverletter.tex'.
 %
-% This work may be distributed and/or modified under the
-% conditions of the LaTeX Project Public License version 1.3c,
-% available at http://www.latex-project.org/lppl/.
-%Version for spanish users, by dgarhdez
+% This is the latex template of coverletters for manuscript submission using moderncv class.
 
-\documentclass[12pt,a4paper, roman]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\documentclass[12pt,a4paper, roman]{moderncv} 
 
-\usepackage[version=4]{mhchem}
+\usepackage{lipsum} % dummy text
 
 % moderncv themes
-\moderncvstyle{classic}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
-\moderncvcolor{green}                              % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
-%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
-%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+\moderncvstyle{classic} % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+% \moderncvcolor{green} % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 
-% character encoding
-\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
-%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
-
-% adjust the page margins
-\usepackage[scale=0.82]{geometry}
-%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
-%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+% adjust the page margins 
+ \usepackage[scale=0.8]{geometry} % default margin is a bit large
 
 % personal data
-\name{Tomohito}{Amano}
+\name{FirstName}{LastName}
 \title{Title}                               % optional, remove / comment the line if not wanted
-\address{Department of Physics, University of Tokyo}{7-3-1 Hongo Bunkyo-ku, Tokyo, Japan.} % optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
-% ちなみに，郵便番号は113-0033らしい．
+\address{Department of A, University of B}{0-0-0 AAA BBB, Tokyo, Japan.} % optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
 
-%\phone[mobile]{000-000-000-000}                   % optional, remove / comment the line if not wanted
-\phone[fixed]{+81-3-5841-4174}                     % optional, remove / comment the line if not wanted
-%\phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
-\email{tomohito.amano@phys.s.u-tokyo.ac.jp}                               % optional, remove / comment the line if not wanted
-%\homepage{www.johndoe.com}                         % optional, remove / comment the line if not wanted
-%\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
-%\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
-%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+%\phone[mobile]{000-000-000-000} % optional, remove / comment the line if not wanted
+\phone[fixed]{+00-0-0000-0000}   % optional, remove / comment the line if not wanted
+\email{test@example.com}         % optional, remove / comment the line if not wanted
 
-% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
-%\makeatletter
-%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
-%\makeatother
-%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
-
-
-% bibliography with mutiple entries
-%\usepackage{multibib}
-%\newcites{book,misc}{{Books},{Others}}
 %----------------------------------------------------------------------------------
 %            content
 %----------------------------------------------------------------------------------
 \begin{document}
-%-----       letter       ---------------------------------------------------------
-% recipient data
-% \recipient{Destinatario}{Departamento, Empresa}
+% recipient journal data 
 \recipient{The Editorial Office}{Physical Review B}
 \date{\today}
-% 文頭
-\opening{\textbf{Paper title}: Lattice dielectric properties of rutile \ce{TiO2}: First-principles anharmonic self-consistent phonon study \\
-\textbf{Authors}: Tomohito Amano, Tamio Yamazaki, Ryosuke Akashi, Terumasa Tadano, Shinji Tsuneyuki} 
+% Title and Author
+\opening{\textbf{Paper title}: The example paper title \\
+\textbf{Authors}: Author1, Author2, Author3, Author4}
 
-% 文末
+% closing word
 \closing{Sincerely yours,}
-% \enclosure[Adjunto]{CV}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
 
 \makelettertitle
-
 % 
 Dear Editors of Physical Review B
 
 \vspace{0.5cm}
 
-
-We are submitting a paper entitled "Lattice dielectric properties of rutile \ce{TiO2}: First-principles anharmonic self-consistent phonon study" for consideration of publication as Regular Article in Physical Review B. 
-
-\vspace{0.2cm}
-
-Titanium dioxide (\ce{TiO2}) in the rutile structure is an incipient ferroelectric material, which shows remarkably large dielectric constants of $110$ and $250$ along the $x$ and $z$ axes, respectively. The consequent high refractive index has important applications, such as pigments and capacitors. When one studies its dielectric properties theoretically, however, its strong lattice anharmonicity has to be incorporated for accurate analysis. The self-consistent phonon theory makes it possible to deal with such strong anharmonicity, combined with a recently developed \textit{ab initio} computational framework of phonon anharmonicity.
+We are submitting a paper entitled "The example paper title" for consideration of publication as Regular Article in Physical Review B. 
 
 \vspace{0.2cm}
 
-We use \textit{ab initio} anharmonic lattice dynamics methods to investigate the lattice dielectric properties of rutile \ce{TiO2}. We employ the modified self-consistent approach, including third-order anharmonicity as well as fourth-order anharmonicity. We also include the four-phonon scattering process for phonon linewidth. We point out that neither the harmonic approximation nor the perturbation method suffices for lattice optical properties. Furthermore, by incorporating the frequency dependence of phonon linewidth, we found that two-phonon emission process is responsible for experimentally known but unidentified peaks of the dielectric function.
+\lipsum[10] % introduction
 
 \vspace{0.2cm}
 
-Our calculation very well agrees with experimental values and highlights the importance of the self-consistent method and the frequency dependence of phonon linewidth. We therefore believe the present manuscript warrants publication as Regular Article in Physical Review B to appeal to the condensed matter physics community.
+\lipsum[10] % method and result
+
+\vspace{0.2cm}
+
+\lipsum[10] % conclusion
 
 \vspace{0.3cm}
 
-\name{On behalf of all the authors, \\ Tomohito}{Amano}
+\name{On behalf of all the authors, \\ FirstName}{LastName}
 \makeletterclosing
 
 \end{document}
 
-
-%% end of file `template.tex'.
+%% end of file `coverletter.tex'.
