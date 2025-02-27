@@ -1,0 +1,56 @@
+%
+% 2023/11/1
+%
+
+\documentclass[tikz]{standalone}
+% https://latexdraw.com/plot-a-function-and-data-in-latex/
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{physics}
+
+\pgfplotsset{compat = newest}
+\pgfplotsset{every axis/.append style={
+                    label style={font=\Large},
+                    tick label style={font=\Large},
+                   }}
+\begin{document}
+
+\def\eps0{50000}
+\def\epsinf{0.2}
+\def\gamma{100}
+\def\freq0{500}
+
+
+    \begin{tikzpicture}
+     \tikzset{every node}=[font=\Large]
+        \begin{axis}[ 
+            xmin = 0, xmax = 2*\freq0,
+            % ymin = -0.003, ymax = 0.010,
+            ticks=none,
+	    xlabel=$\mathrm{Frequency}$,
+	    ylabel=$\varepsilon(\omega)$,
+            % grid = both,
+            minor tick num = 1,
+            major grid style = {lightgray},
+            minor grid style = {lightgray!25},
+            width = 8.6cm, %\textwidth,
+            % height = 0.75\textwidth,
+            legend cell align = {left},
+            legend pos = north east
+        ]
+	 
+	 % Real part
+	 \addplot[domain = 0:2*\freq0,samples=1000,thick,blue] {\epsinf+(\eps0-\epsinf)*(\freq0*\freq0-x*x)/((\freq0*\freq0-x*x)*(\freq0*\freq0-x*x)+\gamma*\gamma*x*x)};
+	 % Imaginary part
+	 \addplot[domain = 0:2*\freq0,samples=1000,thick,red] {\gamma*(\eps0-\epsinf)*x/((\freq0*\freq0-x*x)*(\freq0*\freq0-x*x)+\gamma*\gamma*x*x)};
+
+            \legend{
+	       $\Re\varepsilon(\omega)$,
+	       $\Im\varepsilon(\omega)$} 
+	    %,
+            %    Plot only with marks,
+            %    Plot with other type of marks}
+        \end{axis}
+    \end{tikzpicture}
+\end{document}
