@@ -6,6 +6,14 @@ This directory contains a LaTeX template for creating cover letters for academic
 
 The cover letter template (`coverletter.tex`) is designed for academic authors who need to prepare a formal letter when submitting manuscripts to scientific journals. It provides a clean, professional format with appropriate sections for all the necessary information.
 
+## Image
+
+<p float="left">
+  <img src="assets/coverletter.png" width="45%" />
+</p>
+
+
+
 ## Requirements
 
 To compile this template, you need:
