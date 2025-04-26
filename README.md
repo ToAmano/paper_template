@@ -5,7 +5,7 @@ This repository provides a LaTeX template tailored for submissions to American P
 ## Features
 
 - Manuscript template using the revtex class (APS style)
-- Cover letter template using the moderncv class
+- Cover letter template using the `moderncv` class
 - Referee response template
 - Automated PDF compilation via GitHub Actions
 - example figures generated using tikz/pgfplots
@@ -26,13 +26,13 @@ This repository provides a LaTeX template tailored for submissions to American P
 
 ## Dependencies
 
-Ensure the following LaTeX packages are installed:
+Ensure the following LaTeX packages/repositories are installed:
 
 - revtex: For APS manuscript formatting (can be changed for your preference).
 - moderncv: For the cover letter formatting.
 - standalone: For compiling figures and tables separately.
 - Bibtex: For bibliography management.
-
+- mschroen/review_response_letter: For author response formatting.
 
 ## Usage
 
@@ -73,3 +73,6 @@ The following papers are written using this repository.
 - Include examples for tikz and pgfplots for advanced graphics.
 - Include examples for asymptote for vector graphics.
 
+## References
+
+- (review response letter)[https://github.com/mschroen/review_response_letter]
