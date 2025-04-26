@@ -33,35 +33,36 @@ jobs:
       run: |
         cd manuscript/
         TAG_NAME=${{ github.ref_name }}
-        mv main.pdf "${TAG_NAME}.pdf"
+        mv main.pdf ${TAG_NAME}.pdf
+        ls
 
     - name: Get previous tag
       id: prev_tag
       run: |
         PREV_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "")
         echo "Previous tag is $PREV_TAG"
-        echo "prev_tag=$PREV_TAG" >> $GITHUB_OUTPUT
+        echo "prev_tag=$PREV_TAG" >> $GITHUB_ENV
 
     - name: Get commit ID of previous tag
       if: env.PREV_TAG != ''
       id: prev_commit
       run: |
-        PREV_COMMIT=$(git rev-list -n 1 ${{ steps.prev_tag.outputs.prev_tag }})
+        PREV_COMMIT=$(git rev-list -n 1 $PREV_TAG)
         echo "Previous commit ID is $PREV_COMMIT"
-        echo "prev_commit=$PREV_COMMIT" >> $GITHUB_OUTPUT
+        echo "prev_commit=$PREV_COMMIT" >> $GITHUB_ENV
 
     - name: Run latexdiff-vc
       if: env.PREV_TAG != ''
       run: |
         cd manuscript/
-        latexdiff-vc --git --pdf --flatten -r ${{ steps.prev_commit.outputs.prev_commit }} main.tex
+        latexdiff-vc --git --pdf --flatten -r $PREV_COMMIT main.tex
 
     - name: Rename diff PDF to tag name
       if: env.PREV_TAG != ''
       run: |
         cd manuscript/
         TAG_NAME=${{ github.ref_name }}
-        mv main-diff.pdf "${TAG_NAME}-diff.pdf"
+        mv main-diff.pdf ${TAG_NAME}-diff.pdf
 
     - name: Upload PDF to Release
       uses: softprops/action-gh-release@v2
