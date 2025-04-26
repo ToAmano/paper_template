@@ -11,8 +11,8 @@ This repository provides a LaTeX template tailored for submissions to American P
 - example figures generated using tikz/pgfplots
 
 <p float="left">
-  <img src="manuscript/figures/fig01/fig01.pdf" width="45%" />
-  <img src="manuscript/figures/fig02/fig02.pdf" width="45%" />
+  <img src="assets/fig01.png" width="45%" />
+  <img src="assets/fig02.png" width="45%" />
 </p>
 
 
