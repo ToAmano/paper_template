@@ -55,16 +55,6 @@ A hierarchically organized LaTeX template for academic paper writing. This templ
 
 ## Usage
 
-### Setup
-
-1. Clone or download this repository
-   ```bash
-   git clone https://github.com/ToAmano/paper_template.git
-   cd paper_template
-   ```
-
-2. Edit the files according to your paper's content
-
 ### Paper Writing Workflow
 
 1. Edit `main.tex` as the main file
@@ -77,10 +67,7 @@ A hierarchically organized LaTeX template for academic paper writing. This templ
 
 Basic compilation:
 ```bash
-pdflatex main.tex
-bibtex main
-pdflatex main.tex
-pdflatex main.tex
+latexmk main.tex
 ```
 
 ### Preparing Files for Submission

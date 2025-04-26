@@ -1,4 +1,4 @@
-OB# APS Journal LaTeX Paper Template
+# APS Journal LaTeX Paper Template
 
 This repository provides a LaTeX template tailored for submissions to American Physical Society (APS) journals. It includes templates for the main manuscript, cover letter, and responses to referee reports, along with a GitHub Actions workflow for automated PDF compilation.
 
@@ -8,6 +8,7 @@ This repository provides a LaTeX template tailored for submissions to American P
 - Cover letter template using the moderncv class
 - Referee response template
 - Automated PDF compilation via GitHub Actions
+- example figures generated using tikz/pgfplots
 
 ## Directory Structure
 
