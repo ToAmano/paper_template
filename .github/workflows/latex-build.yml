@@ -16,7 +16,9 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-
+      with:
+        fetch-depth: 0
+      
     - name: Set up LaTeX environment
       run: |
         sudo apt-get update
@@ -36,11 +38,12 @@ jobs:
     - name: Get previous tag
       id: prev_tag
       run: |
-        PREV_TAG=$(git describe --tags --abbrev=0 HEAD^)
+        PREV_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "")
         echo "Previous tag is $PREV_TAG"
         echo "prev_tag=$PREV_TAG" >> $GITHUB_OUTPUT
 
     - name: Get commit ID of previous tag
+      if: env.PREV_TAG != ''
       id: prev_commit
       run: |
         PREV_COMMIT=$(git rev-list -n 1 ${{ steps.prev_tag.outputs.prev_tag }})
@@ -48,21 +51,31 @@ jobs:
         echo "prev_commit=$PREV_COMMIT" >> $GITHUB_OUTPUT
 
     - name: Run latexdiff-vc
+      if: env.PREV_TAG != ''
       run: |
         cd manuscript/
         latexdiff-vc --git --pdf --flatten -r ${{ steps.prev_commit.outputs.prev_commit }} main.tex
 
     - name: Rename diff PDF to tag name
+      if: env.PREV_TAG != ''
       run: |
         cd manuscript/
         TAG_NAME=${{ github.ref_name }}
         mv main-diff.pdf "${TAG_NAME}-diff.pdf"
 
-    - name: Upload diff PDF to Release
+    - name: Upload PDF to Release
       uses: softprops/action-gh-release@v2
       with:
         files: |
           "manuscript/${{ github.ref_name }}.pdf"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Upload diff PDF to Release
+      uses: softprops/action-gh-release@v2
+      if: env.PREV_TAG != ''
+      with:
+        files: |
           "manuscript/${{ github.ref_name }}-diff.pdf"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
