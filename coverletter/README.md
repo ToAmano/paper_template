@@ -9,7 +9,7 @@ The cover letter template (`coverletter.tex`) is designed for academic authors w
 ## Image
 
 <p float="left">
-  <img src="assets/coverletter.png" width="45%" />
+  <img src="../assets/coverletter.png" width="45%" />
 </p>
 
 
