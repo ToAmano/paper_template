@@ -1,4 +1,4 @@
-# APS Journal LaTeX Paper Template
+OB# APS Journal LaTeX Paper Template
 
 This repository provides a LaTeX template tailored for submissions to American Physical Society (APS) journals. It includes templates for the main manuscript, cover letter, and responses to referee reports, along with a GitHub Actions workflow for automated PDF compilation.
 
@@ -58,7 +58,7 @@ The repository includes a GitHub Actions workflow that automatically compiles th
 
 The following papers are written using this repository.
 
-- __T. Amano__, T. Yamazaki, N. Matsumura, Y. Yoshimoto, S. Tsuneyuki, "Transferability of the chemical bond-based machine learning model for dipole moment: the GHz to THz dielectric properties of liquid propylene glycol and polypropylene glycol". [[link](https://doi.org/10.1103/PhysRevB.111.165149)][[arXiv](https://arxiv.org/abs/2410.22718)]
+- __T. Amano__, T. Yamazaki, N. Matsumura, Y. Yoshimoto, S. Tsuneyuki, "Transferability of the chemical bond-based machine learning model for dipole moment: the GHz to THz dielectric properties of liquid propylene glycol and polypropylene glycol", Phys. Rev. B **111**, 165149 (2025). [[link](https://doi.org/10.1103/PhysRevB.111.165149)][[arXiv](https://arxiv.org/abs/2410.22718)]
 - __T. Amano__, T. Yamazaki, S. Tsuneyuki, "Chemical bond based machine learning model for dipole moment: Application to dielectric properties of liquid methanol and ethanol", Phys. Rev. B **110**, 165159 (2024).[[press](https://www.s.u-tokyo.ac.jp/ja/press/10544/)] [[link](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.110.165159)] [[arXiv](https://arxiv.org/abs/2407.08390)]
 - __T. Amano__, T. Yamazaki, R. Akashi, T. Tadano, S. Tsuneyuki, "Lattice dielectric properties of rutile TiO<sub>2</sub>: First-principles anharmonic self-consistent phonon study", Phys. Rev. B **107**, 094305 (2023). [[link](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.107.094305)] [[arXiv](https://arxiv.org/abs/2210.15873)]
 
