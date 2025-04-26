@@ -3,7 +3,7 @@ name: Build and Upload LaTeX PDF
 on:
   push:
     tags:
-      - '*'  # どんなタグでも反応する
+      - '*'  # Trigger on all tag pushes
 
 permissions:
   contents: write
@@ -22,11 +22,6 @@ jobs:
       with:
         fetch-depth: 0
       
-    - name: Set up LaTeX environment
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y latexmk
-
     - name: Compile LaTeX document
       working-directory: ${{ env.MANUSCRIPT_DIR }}
       run: |
