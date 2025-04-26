@@ -71,9 +71,10 @@ jobs:
         cd manuscript/
         TAG_NAME=${{ github.ref_name }}
         PREV_COMMIT=${{ steps.prev_commit.outputs.prev_commit }}
+        DIFF_FILENAME=main-diff${PREV_COMMIT}.pdf 
         # ファイル存在チェック
-        if [ -f "main-${PREV_COMMIT}.pdf" ]; then
-           mv main-${PREV_COMMIT}.pdf "${TAG_NAME}-diff.pdf"
+        if [ -f ${DIFF_FILENAME} ]; then
+           mv ${DIFF_FILENAME} ${TAG_NAME}-diff.pdf
         else
            echo "No diff PDF found. Skipping rename."
         fi
