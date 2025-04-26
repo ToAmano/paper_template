@@ -19,7 +19,7 @@ $pdflatex = 'lualatex %O -synctex=1 %S';
 
 # build file
 # https://qiita.com/ymfj/items/088fa556c94fc9ab460f
-@default_files    = ('main.tex');
+@default_files    = ('author_response.tex');
 
 # preview
 $pvc_view_file_via_temporary = 6;
