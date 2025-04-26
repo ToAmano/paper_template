@@ -1,0 +1,31 @@
+name: Build and Upload LaTeX PDF
+
+on:
+  push:
+    tags:
+      - '*'  # どんなタグでも反応する
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up LaTeX environment
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y texlive-full latexmk
+
+    - name: Compile LaTeX document
+      run: |
+        cd manuscript/
+        latexmk -pdf main.tex
+
+    - name: Upload PDF to Release
+      uses: softprops/action-gh-release@v2
+      with:
+        files: main.pdf
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
