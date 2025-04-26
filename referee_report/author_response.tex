@@ -9,17 +9,16 @@
 
 % Typography
 \usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage{times}
-%\usepackage{mathptmx} % math also in times font
 \usepackage{amssymb,amsmath}
 \usepackage{microtype}
-\usepackage[utf8]{inputenc}
 
 % Misc
 \usepackage{graphicx}
 \usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
 \usepackage{soul} % Highlight using \hl{}
-\usepackage{lipsum}
+\usepackage{lipsum} % dummy text
 
 % Table
 \usepackage{adjustbox} % center large tables across textwidth by surrounding tabular with \begin{adjustbox}{center}
@@ -63,6 +62,10 @@
 \let\endoldtabular=\endtabular
 \renewenvironment{tabular}[1]{\begin{adjustbox}{center}\begin{oldtabular}{#1}}{\end{oldtabular}\end{adjustbox}}
 
+
+% Itemize styles
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
 
 % Shortcuts
 
@@ -114,7 +117,6 @@
 \usepackage{siunitx}
 \usepackage{standalone}
 \usepackage{mhchem}
-\usepackage{graphicx}
 
 % 
 \renewcommand{\thefigure}{A\arabic{figure}}
@@ -142,7 +144,7 @@
 
 \section{Summary of Update}
 
-\lipsum[10]
+\lipsum[1]
 
 These are highlighted by red in the attached highlighted manuscript except for minor grammatical corrections.
 
