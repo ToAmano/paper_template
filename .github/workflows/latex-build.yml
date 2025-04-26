@@ -22,15 +22,10 @@ jobs:
       with:
         fetch-depth: 0
       
-    - name: Compile LaTeX document
+    - name: Compile LaTeX document and name pdf to tag name
       working-directory: ${{ env.MANUSCRIPT_DIR }}
       run: |
-        latexmk -pdf main.tex
-
-    - name: Rename PDF to tag name
-      working-directory: ${{ env.MANUSCRIPT_DIR }}
-      run: |
-        mv main.pdf ${{ github.ref_name }}.pdf
+        latexmk -jobname=${{ github.ref_name }} -pdf main.tex
 
     - name: Upload PDF to Release
       uses: softprops/action-gh-release@v2
