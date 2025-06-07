@@ -2,6 +2,7 @@
 
 ## if necessary comment out to remove final pdf
 # main.pdf
+.history/
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
